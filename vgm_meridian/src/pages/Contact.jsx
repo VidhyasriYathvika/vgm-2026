@@ -24,6 +24,20 @@ export default function Contact() {
     }));
   };
 
+  const openWhatsApp = (data) => {
+    const whatsappNumber = "917904730223";
+    const text =
+      `*New Contact from VGM Meridian Website*\n\n` +
+      `*Name:* ${data.name}\n` +
+      `*Email:* ${data.email}\n` +
+      (data.subject ? `*Subject:* ${data.subject}\n` : "") +
+      `*Message:* ${data.message}`;
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`,
+      "_blank"
+    );
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -44,6 +58,7 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus("success");
         setStatusMessage(data.message || "Thank you! Your message has been sent successfully.");
+        openWhatsApp(formData);
         // Reset form
         setFormData({
           name: "",

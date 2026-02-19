@@ -26,10 +26,13 @@ Go to [https://render.com](https://render.com) and sign up / log in.
 2. Connect your GitHub repository
 3. Fill in the settings:
    - **Name**: `vgm-meridian`
+   - **Root Directory**: *(leave blank / keep as `.` — do NOT set to `backend`)*
    - **Runtime**: `Python 3`
    - **Build Command**: `./build.sh`
    - **Start Command**: `cd backend && gunicorn vgm_backend.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 120`
    - **Plan**: Free
+
+> ⚠️ **Root Directory must be the project root (blank or `.`)** — NOT `backend/`. This is because the build needs access to both the React frontend (`package.json`, `src/`) and the Django backend (`backend/`). The `cd backend` in the start command handles the directory change.
 
 > **Note**: Render will auto-detect `render.yaml` if you use "Blueprint" deployment — see Step 3b below.
 
@@ -45,12 +48,14 @@ In the Render dashboard → your service → **Environment**, add:
 
 | Key | Value |
 |-----|-------|
-| `SECRET_KEY` | (click "Generate" for a random value) |
+| `SECRET_KEY` | `76W$p$WwZBSDbDDPPFf+n-IdYJE90R2(kV8^P#PrKa2sAZBlyC` |
 | `DEBUG` | `False` |
 | `ALLOWED_HOSTS` | `.onrender.com,localhost,127.0.0.1` |
 | `DATABASE_URL` | (auto-set if using Blueprint, otherwise paste your PostgreSQL URL) |
 | `EMAIL_HOST_USER` | `vgmmeridiangroups@gmail.com` |
 | `EMAIL_HOST_PASSWORD` | (your Gmail App Password — see below) |
+
+> **Note**: The `SECRET_KEY` above is already set in `render.yaml` for Blueprint deployments. For manual deployments, copy-paste it above.
 
 ### Step 5: Gmail App Password Setup
 
@@ -87,6 +92,9 @@ Go to [https://railway.app](https://railway.app) and sign up / log in.
 1. Click **"New Project"** → **"Deploy from GitHub repo"**
 2. Select your repository
 3. Railway will detect `railway.json` automatically
+4. **Root Directory**: Leave blank (project root) — do NOT set to `backend/`
+
+> ⚠️ **Root Directory must stay at project root** — the build needs both `package.json` (React) and `backend/` (Django). The `cd backend` in the start command handles the directory change.
 
 ### Step 4: Add a PostgreSQL Database
 
@@ -99,7 +107,7 @@ In Railway → your service → **Variables**, add:
 
 | Key | Value |
 |-----|-------|
-| `SECRET_KEY` | (generate a random 50-char string) |
+| `SECRET_KEY` | `76W$p$WwZBSDbDDPPFf+n-IdYJE90R2(kV8^P#PrKa2sAZBlyC` |
 | `DEBUG` | `False` |
 | `ALLOWED_HOSTS` | `.railway.app,localhost,127.0.0.1` |
 | `DATABASE_URL` | (auto-set by Railway PostgreSQL plugin) |

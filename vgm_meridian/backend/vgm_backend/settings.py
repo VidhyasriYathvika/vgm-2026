@@ -34,6 +34,18 @@ RAILWAY_PUBLIC_DOMAIN = os.environ.get('RAILWAY_PUBLIC_DOMAIN')
 if RAILWAY_PUBLIC_DOMAIN:
     ALLOWED_HOSTS.append(RAILWAY_PUBLIC_DOMAIN)
 
+# Auto-add Render external URL to ALLOWED_HOSTS
+RENDER_EXTERNAL_URL = os.environ.get('RENDER_EXTERNAL_URL')
+if RENDER_EXTERNAL_URL:
+    from urllib.parse import urlparse
+    _render_host = urlparse(RENDER_EXTERNAL_URL).netloc
+    if _render_host and _render_host not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(_render_host)
+
+# Always allow all .onrender.com subdomains
+if '.onrender.com' not in ALLOWED_HOSTS:
+    ALLOWED_HOSTS.append('.onrender.com')
+
 
 # Application definition
 

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(python manage.py makemigrations:*)",
+      "Bash(\"/c/Users/vidhya sri/AppData/Local/Programs/Python/Python310/python.exe\" --version)",
+      "Bash(npm run build:*)",
+      "Bash(git rm:*)"
+    ]
+  }
+}

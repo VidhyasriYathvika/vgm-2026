@@ -1,0 +1,103 @@
+/* ===============================
+   FOOTER – CORPORATE NAVBAR STYLE
+================================= */
+
+.footer {
+  width: 100%;
+ background: linear-gradient(
+  90deg,
+    rgba(238, 37, 37, 0.95),
+  rgba(240, 25, 25, 0.95)
+); /* soft white like navbar */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(200, 0, 0, 0.2); /* subtle red border */
+  padding: 12px 8%; /* compact height */
+  position: relative;
+  z-index: 100;
+}
+
+/* CONTAINER */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+/* SOCIAL ICONS */
+.footer-socials {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-socials a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #070707; /* corporate red */
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover color + underline */
+.footer-socials a:hover {
+  color: #070707;
+}
+
+.footer-socials a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, #b80000, #ff4d4d);
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover::after {
+  width: 100%;
+}
+
+/* SOCIAL ICON IMAGES */
+.footer-socials img {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.footer-socials a:hover img {
+  transform: scale(1.1);
+}
+
+/* COPYRIGHT TEXT */
+.footer p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f1eeee;
+  margin: 0;
+  transition: 0.3s ease;
+}
+
+.footer p:hover {
+  color: #090909;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .footer {
+    padding: 10px 5%;
+  }
+
+  .footer-socials {
+    gap: 16px;
+  }
+
+  .footer p {
+    font-size: 13px;
+  }
+}

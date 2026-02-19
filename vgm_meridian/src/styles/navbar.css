@@ -1,0 +1,107 @@
+/* ===============================
+   NAVBAR – COMPACT VERSION
+================================= */
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+background: linear-gradient(
+  90deg,
+  rgba(238, 37, 37, 0.95),
+  rgba(240, 25, 25, 0.95)
+ 
+);
+ /* solid background with transparency */
+ height:70px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(200, 0, 0, 0.2); /* subtle red border */
+}
+
+/* CONTAINER */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+gap: 20px;
+  padding: 2px 8%;   /* 🔥 smaller height */
+}
+
+/* LOGO */
+.navbar-logo img {
+  height: 85px;   /* 🔥 reduced logo size */
+  width: auto;
+  transition: 0.3s ease;
+  padding-bottom: 5px;
+  filter: drop-shadow(0 4px 8px rgba(200, 0, 0, 0.25)); /* red shadow */
+}
+
+.navbar-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* LINKS */
+.navbar-links {
+  display: flex;
+  gap: 24px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ece7e7; /* corporate red */
+  position: relative;
+  transition: 0.3s ease;
+ 
+}
+
+/* Hover */
+.navbar-links a:hover {
+  color: #060114; /* lighter red on hover */
+}
+
+/* Underline */
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #b80000, #ff4d4d); /* red gradient underline */
+  transition: 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+
+  .navbar-container {
+    padding: 4px 5%;
+  }
+
+  .navbar-logo img {
+    height: 50px;
+  }
+
+  .navbar-logo a:hover {
+    transform: scale(1.1);
+    color: #f2f0f0;
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+
+  .navbar-links a {
+    font-size: 13px;
+  }
+}
+

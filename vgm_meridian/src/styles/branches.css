@@ -1,0 +1,321 @@
+/* ============================= */
+/* HERO – BOLD CORPORATE STYLE */
+/* ============================= */
+
+.branches-hero {
+  text-align: center;
+  padding: 130px 8% 70px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f4f4f4 50%,
+    #ffffff 100%
+  );
+  color: #111111;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft red glow */
+.branches-hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 0, 0, 0.08),
+    transparent 70%
+  );
+  top: -200px;
+  right: -150px;
+  animation: glowMove 8s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes glowMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-80px); }
+}
+
+/* Hero Title */
+.branches-hero h1 {
+  font-size: 44px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+  color: #8b0000;
+}
+
+/* Hero Paragraph */
+.branches-hero p {
+  max-width: 650px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  color: #333333;
+}
+
+/* ============================= */
+/* SECTION BACKGROUND */
+/* ============================= */
+
+.branches-section {
+  padding: 100px 8%;
+  background: #ffffff;
+}
+
+/* ============================= */
+/* CARD – CORPORATE WHITE STYLE */
+/* ============================= */
+
+.branch-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 50px;
+  margin-bottom: 80px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  overflow: hidden;
+  color: #111111;
+  perspective: 1000px;
+}
+
+/* Card Hover */
+.branch-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* Animated Red Border */
+.branch-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(120deg, #8b0000, #b80000, #8b0000);
+  background-size: 200% 200%;
+  animation: borderFlow 6s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ============================= */
+/* LOGO */
+/* ============================= */
+
+.branch-logo {
+  flex: 0 0 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.branch-logo img {
+  width: 160px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.branch-card:hover .branch-logo img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 15px 25px rgba(139,0,0,0.4));
+}
+
+/* ============================= */
+/* CONTENT */
+/* ============================= */
+
+.branch-content {
+  flex: 1;
+}
+
+.branch-content h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #8b0000;
+  position: relative;
+}
+
+.branch-content h2::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #8b0000;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.4s ease;
+}
+
+.branch-card:hover .branch-content h2::after {
+  width: 60%;
+}
+
+.branch-content p {
+  margin-bottom: 15px;
+  color: #444444;
+}
+
+.branch-content ul li {
+  margin-bottom: 8px;
+  padding-left: 18px;
+  position: relative;
+  color: #333333;
+}
+
+.branch-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  color: #8b0000;
+}
+
+/* ============================= */
+/* IMAGE */
+/* ============================= */
+
+.branch-image {
+  flex: 0 0 300px;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+}
+
+.branch-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  animation: floatImage 5s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.branch-card:hover .branch-image img {
+  transform: scale(1.05);
+}
+
+/* Shine Effect */
+.branch-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.3),
+    transparent
+  );
+  transform: skewX(-20deg);
+}
+
+.branch-card:hover .branch-image::after {
+  animation: shine 1s ease forwards;
+}
+
+@keyframes shine {
+  100% { left: 150%; }
+}
+
+/* ============================= */
+/* BUTTON */
+/* ============================= */
+
+.branch-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, #8b0000, #b80000);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 18px rgba(139,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.branch-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.6s;
+}
+
+.branch-link:hover::before {
+  left: 150%;
+}
+
+.branch-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(139,0,0,0.5);
+}
+
+/* ============================= */
+/* SCROLL REVEAL */
+/* ============================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .branch-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .branch-image img {
+    height: 200px;
+  }
+}

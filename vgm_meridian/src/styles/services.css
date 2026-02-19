@@ -1,0 +1,290 @@
+/* =========================================
+   SERVICES PAGE – CORPORATE WHITE STYLE
+========================================= */
+
+.services-page {
+  background: #ffffff;
+  color: #111111;
+  overflow: hidden;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.services-header {
+  text-align: center;
+  padding: 130px 8% 70px;
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f4f4f4 50%,
+    #ffffff 100%
+  );
+  position: relative;
+}
+
+/* Soft Red Glow */
+.services-header::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(139, 0, 0, 0.08),
+    transparent 70%
+  );
+  top: -200px;
+  right: -150px;
+  animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-60px); }
+}
+
+.services-header h1 {
+  font-size: 44px;
+  margin-bottom: 15px;
+  color: #8b0000;
+  position: relative;
+  z-index: 2;
+}
+
+.services-header p {
+  max-width: 650px;
+  margin: auto;
+  color: #444444;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
+   COUNTERS
+========================================= */
+
+.service-counters {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.counter-box {
+  background: #ffffff;
+  padding: 30px 50px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.4s ease;
+}
+
+.counter-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(139,0,0,0.2);
+}
+
+.counter-box h2 {
+  color: #8b0000;
+  font-size: 32px;
+}
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.gradient-divider {
+  height: 2px;
+  width: 80%;
+  margin: 80px auto;
+  background: linear-gradient(90deg, transparent, #8b0000, transparent);
+}
+
+/* =========================================
+   BRANCH SECTION
+========================================= */
+
+.service-branch {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 0 8%;
+  margin-bottom: 100px;
+}
+
+.service-branch.reverse {
+  flex-direction: row-reverse;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.branch-logo {
+  width: 150px;
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.service-branch:hover .branch-logo {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.service-content h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #8b0000;
+  position: relative;
+}
+
+.service-content h2::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  background: #8b0000;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.4s ease;
+}
+
+.service-branch:hover h2::after {
+  width: 60%;
+}
+
+.service-content p {
+  margin-bottom: 30px;
+  color: #444444;
+}
+
+/* =========================================
+   SERVICE GRID
+========================================= */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+/* =========================================
+   SERVICE CARD – WHITE CORPORATE
+========================================= */
+
+.service-card {
+  position: relative;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  background: #ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: all 0.5s ease;
+
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* Animated Red Border */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+  background: linear-gradient(120deg, #8b0000, #b80000, #8b0000);
+  background-size: 200% 200%;
+  animation: borderFlow 6s linear infinite;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+}
+
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px rgba(139,0,0,0.2);
+}
+
+/* ICON */
+.service-icon {
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: #8b0000;
+  transition: 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.2);
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.branch-cta {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(135deg, #8b0000, #b80000);
+  color: #ffffff;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(139,0,0,0.4);
+}
+
+.branch-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(139,0,0,0.5);
+}
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.service-card.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+  .service-branch {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+}

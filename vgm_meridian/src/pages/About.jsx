@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../styles/About.css";
+import "../styles/about.css";
 
 /* Custom Counter Hook */
 const useCounter = (end, duration = 2000, startAnimation) => {

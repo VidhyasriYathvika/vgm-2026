@@ -46,24 +46,28 @@ Go to [https://render.com](https://render.com) and sign up / log in.
 
 In the Render dashboard → your service → **Environment**, add:
 
-| Key | Value |
-|-----|-------|
-| `SECRET_KEY` | `76W$p$WwZBSDbDDPPFf+n-IdYJE90R2(kV8^P#PrKa2sAZBlyC` |
-| `DEBUG` | `False` |
-| `ALLOWED_HOSTS` | `.onrender.com,localhost,127.0.0.1` |
-| `DATABASE_URL` | (auto-set if using Blueprint, otherwise paste your PostgreSQL URL) |
-| `EMAIL_HOST_USER` | `vgmmeridiangroups@gmail.com` |
-| `EMAIL_HOST_PASSWORD` | (your Gmail App Password — see below) |
+| Key | Value | Required? |
+|-----|-------|-----------|
+| `SECRET_KEY` | `76W$p$WwZBSDbDDPPFf+n-IdYJE90R2(kV8^P#PrKa2sAZBlyC` | ✅ Yes |
+| `DEBUG` | `False` | ✅ Yes |
+| `ALLOWED_HOSTS` | `.onrender.com,localhost,127.0.0.1` | ✅ Yes |
+| `DATABASE_URL` | (auto-set if using Blueprint, otherwise paste your PostgreSQL URL) | ✅ Yes |
+| `EMAIL_HOST_USER` | `vgmmeridiangroups@gmail.com` | ⚠️ Optional |
+| `EMAIL_HOST_PASSWORD` | (your Gmail App Password — see below) | ⚠️ Optional |
 
 > **Note**: The `SECRET_KEY` above is already set in `render.yaml` for Blueprint deployments. For manual deployments, copy-paste it above.
 
-### Step 5: Gmail App Password Setup
+> **Email is optional**: If `EMAIL_HOST_PASSWORD` is not set, the app automatically uses the console email backend — contact form submissions are still **saved to the database** and viewable at `/admin/`, but no email notification is sent. You can add the Gmail password later.
 
-To send emails from Gmail:
+### Step 5: Gmail App Password Setup (Optional)
+
+To enable email notifications from Gmail:
 1. Go to [https://myaccount.google.com/security](https://myaccount.google.com/security)
 2. Enable **2-Step Verification**
 3. Go to **App Passwords** → Generate a password for "Mail"
 4. Use that 16-character password as `EMAIL_HOST_PASSWORD`
+
+> **Skip this step** if you don't need email notifications right now. The site will still work fully.
 
 ### Step 6: Deploy
 

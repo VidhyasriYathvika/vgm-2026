@@ -25,7 +25,7 @@ export default function Contact() {
   };
 
   const openWhatsApp = (data) => {
-    const whatsappNumber = "917904730223";
+    const whatsappNumber = "919514192511";
     const text =
       `*New Contact from VGM Meridian Website*\n\n` +
       `*Name:* ${data.name}\n` +

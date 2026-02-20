@@ -1,98 +1,79 @@
-/* ============================= */
-/* HERO – BOLD CORPORATE STYLE */
-/* ============================= */
+/* =====================================================
+   BRANCHES PAGE – MOBILE-FIRST
+   Layout (desktop): content | logo (center) | images (stretch)
+   Breakpoints: 320 | 768 | 1024 | 1440
+======================================================= */
 
+/* ===== HERO ===== */
 .branches-hero {
   text-align: center;
-  padding: 130px 8% 70px;
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #f4f4f4 50%,
-    #ffffff 100%
-  );
+  padding: 100px 5% 55px;
+  background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 50%, #ffffff 100%);
   color: #111111;
   position: relative;
   overflow: hidden;
 }
 
-/* Soft red glow */
 .branches-hero::before {
   content: "";
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(
-    circle,
-    rgba(139, 0, 0, 0.08),
-    transparent 70%
-  );
-  top: -200px;
-  right: -150px;
-  animation: glowMove 8s ease-in-out infinite alternate;
-  z-index: 1;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(139,0,0,0.07) 0%, transparent 70%);
+  top: -160px;
+  right: -100px;
+  pointer-events: none;
 }
 
-@keyframes glowMove {
-  from { transform: translateX(0); }
-  to { transform: translateX(-80px); }
-}
-
-/* Hero Title */
 .branches-hero h1 {
-  font-size: 44px;
-  margin-bottom: 15px;
+  font-size: clamp(1.75rem, 5.5vw, 2.8rem);
+  margin-bottom: 14px;
   position: relative;
   z-index: 2;
   color: #8b0000;
+  font-weight: 700;
 }
 
-/* Hero Paragraph */
 .branches-hero p {
-  max-width: 650px;
-  margin: auto;
+  font-size: clamp(0.88rem, 2.2vw, 1.05rem);
+  max-width: 600px;
+  margin: 0 auto;
   position: relative;
   z-index: 2;
   color: #333333;
+  line-height: 1.72;
 }
 
-/* ============================= */
-/* SECTION BACKGROUND */
-/* ============================= */
-
+/* ===== SECTION ===== */
 .branches-section {
-  padding: 100px 8%;
+  padding: 50px 5% 70px;
   background: #ffffff;
 }
 
-/* ============================= */
-/* CARD – CORPORATE WHITE STYLE */
-/* ============================= */
-
+/* ===== CARD ===== */
 .branch-card {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  padding: 50px;
-  margin-bottom: 80px;
+  gap: 24px;
+  padding: 32px 24px;
+  margin-bottom: 40px;
   border-radius: 20px;
   background: #ffffff;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 10px 32px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
   overflow: hidden;
   color: #111111;
-  perspective: 1000px;
+  text-align: center;
 }
 
-/* Card Hover */
 .branch-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.13);
 }
 
-/* Animated Red Border */
+/* Animated border */
 .branch-card::before {
   content: "";
   position: absolute;
@@ -102,59 +83,55 @@
   background: linear-gradient(120deg, #8b0000, #b80000, #8b0000);
   background-size: 200% 200%;
   animation: borderFlow 6s linear infinite;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 @keyframes borderFlow {
-  0% { background-position: 0% 50%; }
+  0%   { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
 
-/* ============================= */
-/* LOGO */
-/* ============================= */
-
+/* ===== LOGO ===== */
 .branch-logo {
-  flex: 0 0 150px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 
 .branch-logo img {
-  width: 160px;
+  width: clamp(90px, 24vw, 140px);
+  height: auto;
   transition: transform 0.5s ease, filter 0.5s ease;
+  will-change: transform;
   animation: floatLogo 4s ease-in-out infinite;
 }
 
 @keyframes floatLogo {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0px); }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
 }
 
 .branch-card:hover .branch-logo img {
-  transform: scale(1.1);
-  filter: drop-shadow(0 15px 25px rgba(139,0,0,0.4));
+  transform: scale(1.08);
+  filter: drop-shadow(0 10px 20px rgba(139,0,0,0.32));
 }
 
-/* ============================= */
-/* CONTENT */
-/* ============================= */
-
+/* ===== CONTENT ===== */
 .branch-content {
-  flex: 1;
+  width: 100%;
 }
 
 .branch-content h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: clamp(1.25rem, 4vw, 1.7rem);
+  margin-bottom: 12px;
   color: #8b0000;
   position: relative;
+  display: inline-block;
 }
 
 .branch-content h2::after {
@@ -165,7 +142,8 @@
   position: absolute;
   left: 0;
   bottom: -5px;
-  transition: 0.4s ease;
+  border-radius: 2px;
+  transition: width 0.4s ease;
 }
 
 .branch-card:hover .branch-content h2::after {
@@ -173,93 +151,96 @@
 }
 
 .branch-content p {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   color: #444444;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  line-height: 1.78;
+}
+
+.branch-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  text-align: left;
 }
 
 .branch-content ul li {
   margin-bottom: 8px;
-  padding-left: 18px;
+  padding-left: 20px;
   position: relative;
   color: #333333;
+  font-size: clamp(0.83rem, 1.9vw, 0.96rem);
+  line-height: 1.6;
 }
 
 .branch-content ul li::before {
-  content: "";
+  content: "▸";
   position: absolute;
   left: 0;
   color: #8b0000;
+  font-size: 0.8rem;
+  top: 2px;
 }
 
-/* ============================= */
-/* IMAGE */
-/* ============================= */
+/* ===== IMAGE STACK – right column, 2 images, covers card height ===== */
+.branch-image-stack {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* side-by-side on mobile */
+  gap: 10px;
+}
 
-.branch-image {
-  flex: 0 0 300px;
+.branch-img-wrap {
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 12px;
   position: relative;
 }
 
-.branch-image img {
+.branch-img-wrap img {
   width: 100%;
-  height: 220px;
+  height: 140px;
   object-fit: cover;
-  transition: transform 0.6s ease;
-  animation: floatImage 5s ease-in-out infinite;
+  display: block;
+  transition: transform 0.55s ease;
 }
 
-@keyframes floatImage {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0px); }
+.branch-card:hover .branch-img-wrap img {
+  transform: scale(1.06);
 }
 
-.branch-card:hover .branch-image img {
-  transform: scale(1.05);
-}
-
-/* Shine Effect */
-.branch-image::after {
+/* Shine per image */
+.branch-img-wrap::after {
   content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.3),
-    transparent
-  );
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.26), transparent);
   transform: skewX(-20deg);
+  pointer-events: none;
 }
 
-.branch-card:hover .branch-image::after {
-  animation: shine 1s ease forwards;
+.branch-card:hover .branch-img-wrap::after {
+  animation: imageShine 0.85s ease forwards;
 }
 
-@keyframes shine {
+@keyframes imageShine {
   100% { left: 150%; }
 }
 
-/* ============================= */
-/* BUTTON */
-/* ============================= */
-
+/* ===== LINK BUTTON ===== */
 .branch-link {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 16px;
   padding: 10px 22px;
   background: linear-gradient(135deg, #8b0000, #b80000);
   color: #ffffff;
   font-weight: 600;
+  font-size: 0.88rem;
   border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.4s ease;
-  box-shadow: 0 6px 18px rgba(139,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(139,0,0,0.36);
   position: relative;
   overflow: hidden;
 }
@@ -267,55 +248,158 @@
 .branch-link::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.4),
-    transparent
-  );
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.38), transparent);
   transform: skewX(-25deg);
-  transition: 0.6s;
+  transition: left 0.55s ease;
 }
 
-.branch-link:hover::before {
-  left: 150%;
-}
+.branch-link:hover::before { left: 150%; }
 
 .branch-link:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(139,0,0,0.5);
+  box-shadow: 0 10px 26px rgba(139,0,0,0.48);
 }
 
-/* ============================= */
-/* SCROLL REVEAL */
-/* ============================= */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: 1s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============================= */
-/* RESPONSIVE */
-/* ============================= */
-
-@media (max-width: 992px) {
-  .branch-card {
-    flex-direction: column;
-    text-align: center;
+/* ===== TABLET (≥ 768px) ===== */
+@media (min-width: 768px) {
+  .branches-hero {
+    padding: 120px 7% 65px;
   }
 
-  .branch-image img {
-    height: 200px;
+  .branches-section {
+    padding: 70px 7% 90px;
+  }
+
+  /* Row layout: content | logo | images */
+  .branch-card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;      /* children default to natural height */
+    text-align: left;
+    gap: 28px;
+    padding: 40px 32px;
+    margin-bottom: 56px;
+  }
+
+  /* ── Content – LEFT, order 1 ── */
+  .branch-content {
+    order: 1;
+    flex: 1;
+    min-width: 200px;
+    align-self: flex-start;
+  }
+
+  .branch-content ul {
+    text-align: left;
+  }
+
+  /* ── Logo – CENTER/MIDDLE, order 2 ── */
+  .branch-logo {
+    order: 2;
+    flex: 0 0 120px;
+    width: 120px;
+    align-self: center;           /* vertically centered in card */
+  }
+
+  .branch-logo img {
+    width: 120px;
+  }
+
+  /* ── Image stack – RIGHT, order 3, stretches full card height ── */
+  .branch-image-stack {
+    order: 3;
+    flex: 0 0 220px;
+    width: 220px;
+    display: flex;                /* switch from grid to flex-column */
+    flex-direction: column;
+    gap: 20px;                    /* generous space between images */
+    align-self: stretch;          /* fills full card inner height */
+  }
+
+  .branch-img-wrap {
+    flex: 1;                      /* equal share of stack height */
+    min-height: 140px;
+  }
+
+  /* images fill their wrapper 100% */
+  .branch-img-wrap img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* ===== DESKTOP (≥ 1024px) ===== */
+@media (min-width: 1024px) {
+  .branches-hero {
+    padding: 140px 8% 80px;
+  }
+
+  .branches-section {
+    padding: 90px 8% 110px;
+  }
+
+  .branch-card {
+    flex-wrap: nowrap;
+    padding: 48px 40px;
+    gap: 36px;
+    margin-bottom: 70px;
+  }
+
+  .branch-logo {
+    flex: 0 0 145px;
+    width: 145px;
+  }
+
+  .branch-logo img {
+    width: 145px;
+  }
+
+  .branch-image-stack {
+    flex: 0 0 255px;
+    width: 255px;
+    gap: 22px;
+  }
+
+  .branch-img-wrap {
+    min-height: 155px;
+  }
+}
+
+/* ===== LARGE (≥ 1440px) ===== */
+@media (min-width: 1440px) {
+  .branches-hero {
+    padding: 160px 10% 90px;
+  }
+
+  .branches-section {
+    padding: 110px 10% 130px;
+  }
+
+  .branch-card {
+    padding: 54px 48px;
+    gap: 44px;
+    margin-bottom: 80px;
+  }
+
+  .branch-logo {
+    flex: 0 0 160px;
+    width: 160px;
+  }
+
+  .branch-logo img {
+    width: 160px;
+  }
+
+  .branch-image-stack {
+    flex: 0 0 290px;
+    width: 290px;
+    gap: 24px;
+  }
+
+  .branch-img-wrap {
+    min-height: 170px;
   }
 }

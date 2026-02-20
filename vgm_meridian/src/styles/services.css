@@ -1,6 +1,7 @@
-/* =========================================
-   SERVICES PAGE – CORPORATE WHITE STYLE
-========================================= */
+/* =====================================================
+   SERVICES PAGE – MOBILE-FIRST
+   Breakpoints: 320 | 768 | 1024 | 1440
+======================================================= */
 
 .services-page {
   background: #ffffff;
@@ -8,144 +9,121 @@
   overflow: hidden;
 }
 
-/* =========================================
-   HEADER
-========================================= */
-
+/* ===== HEADER ===== */
 .services-header {
   text-align: center;
-  padding: 130px 8% 70px;
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #f4f4f4 50%,
-    #ffffff 100%
-  );
+  padding: 100px 5% 60px;
+  background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 50%, #ffffff 100%);
   position: relative;
+  overflow: hidden;
 }
 
-/* Soft Red Glow */
 .services-header::before {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(
-    circle,
-    rgba(139, 0, 0, 0.08),
-    transparent 70%
-  );
-  top: -200px;
-  right: -150px;
-  animation: glowMove 8s ease-in-out infinite alternate;
-}
-
-@keyframes glowMove {
-  from { transform: translateX(0); }
-  to { transform: translateX(-60px); }
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(139,0,0,0.07) 0%, transparent 70%);
+  top: -160px;
+  right: -100px;
+  pointer-events: none;
 }
 
 .services-header h1 {
-  font-size: 44px;
-  margin-bottom: 15px;
+  font-size: clamp(1.75rem, 5.5vw, 2.8rem);
+  margin-bottom: 14px;
   color: #8b0000;
   position: relative;
   z-index: 2;
+  font-weight: 700;
 }
 
 .services-header p {
-  max-width: 650px;
-  margin: auto;
+  font-size: clamp(0.88rem, 2.2vw, 1.05rem);
+  max-width: 600px;
+  margin: 0 auto;
   color: #444444;
+  line-height: 1.7;
   position: relative;
   z-index: 2;
 }
 
-/* =========================================
-   COUNTERS
-========================================= */
-
+/* ===== COUNTERS ===== */
 .service-counters {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 50px;
+  gap: 16px;
+  margin-top: 40px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .counter-box {
   background: #ffffff;
-  padding: 30px 50px;
-  border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  transition: 0.4s ease;
+  padding: 24px 32px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  min-width: 130px;
+  text-align: center;
 }
 
 .counter-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(139,0,0,0.2);
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(139,0,0,0.18);
 }
 
 .counter-box h2 {
   color: #8b0000;
-  font-size: 32px;
+  font-size: clamp(1.6rem, 5vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
-/* =========================================
-   DIVIDER
-========================================= */
-
-.gradient-divider {
-  height: 2px;
-  width: 80%;
-  margin: 80px auto;
-  background: linear-gradient(90deg, transparent, #8b0000, transparent);
+.counter-box p {
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 500;
 }
 
-/* =========================================
-   BRANCH SECTION
-========================================= */
-
+/* ===== BRANCH SECTION ===== */
 .service-branch {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 60px;
-  padding: 0 8%;
-  margin-bottom: 100px;
+  gap: 28px;
+  padding: 0 5%;
+  margin-bottom: 60px;
+  text-align: center;
 }
 
-.service-branch.reverse {
-  flex-direction: row-reverse;
-}
-
-/* =========================================
-   LOGO
-========================================= */
-
-.branch-logo {
-  width: 150px;
+/* Logo (direct img in services) */
+.service-branch > img.branch-logo,
+img.branch-logo {
+  width: clamp(90px, 25vw, 140px);
+  height: auto;
+  flex-shrink: 0;
+  will-change: transform;
   animation: floatLogo 4s ease-in-out infinite;
 }
 
 @keyframes floatLogo {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
 }
 
-.service-branch:hover .branch-logo {
-  transform: scale(1.08);
+/* ===== SERVICE CONTENT ===== */
+.service-content {
+  width: 100%;
 }
-
-/* =========================================
-   CONTENT
-========================================= */
 
 .service-content h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
+  font-size: clamp(1.3rem, 4vw, 1.75rem);
+  margin-bottom: 12px;
   color: #8b0000;
   position: relative;
+  display: inline-block;
 }
 
 .service-content h2::after {
@@ -156,135 +134,201 @@
   position: absolute;
   left: 0;
   bottom: -6px;
-  transition: 0.4s ease;
+  border-radius: 2px;
+  transition: width 0.4s ease;
 }
 
-.service-branch:hover h2::after {
+.service-branch:hover .service-content h2::after {
   width: 60%;
 }
 
 .service-content p {
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   color: #444444;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  line-height: 1.7;
 }
 
-/* =========================================
-   SERVICE GRID
-========================================= */
-
+/* ===== SERVICE GRID ===== */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-bottom: 30px;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
 }
 
-/* =========================================
-   SERVICE CARD – WHITE CORPORATE
-========================================= */
-
+/* ===== SERVICE CARD ===== */
 .service-card {
   position: relative;
-  padding: 25px;
-  border-radius: 18px;
+  padding: 20px 14px;
+  border-radius: 16px;
   text-align: center;
   background: #ffffff;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  transition: all 0.5s ease;
-
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
   opacity: 0;
-  transform: translateY(60px);
+  will-change: opacity, transform;
 }
 
-/* Animated Red Border */
 .service-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 18px;
+  border-radius: 16px;
   padding: 2px;
   background: linear-gradient(120deg, #8b0000, #b80000, #8b0000);
   background-size: 200% 200%;
   animation: borderFlow 6s linear infinite;
-
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-          mask-composite: exclude;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 @keyframes borderFlow {
-  0% { background-position: 0% 50%; }
+  0%   { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
 
 .service-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 50px rgba(139,0,0,0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 22px 46px rgba(139,0,0,0.18);
 }
-
-/* ICON */
-.service-icon {
-  font-size: 28px;
-  margin-bottom: 12px;
-  color: #8b0000;
-  transition: 0.3s ease;
-}
-
-.service-card:hover .service-icon {
-  transform: scale(1.2);
-}
-
-/* =========================================
-   BUTTON
-========================================= */
-
-.branch-cta {
-  padding: 12px 28px;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  background: linear-gradient(135deg, #8b0000, #b80000);
-  color: #ffffff;
-  transition: 0.3s ease;
-  box-shadow: 0 6px 18px rgba(139,0,0,0.4);
-}
-
-.branch-cta:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(139,0,0,0.5);
-}
-
-/* =========================================
-   SCROLL REVEAL
-========================================= */
 
 .service-card.active {
   opacity: 1;
   transform: translateY(0);
-  transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1),
+              transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* =========================================
-   RESPONSIVE
-========================================= */
+.service-icon {
+  font-size: clamp(22px, 5vw, 28px);
+  margin-bottom: 10px;
+  color: #8b0000;
+  transition: transform 0.3s ease;
+}
 
-@media (max-width: 992px) {
+.service-card:hover .service-icon {
+  transform: scale(1.18);
+}
+
+.service-card h4 {
+  font-size: clamp(0.78rem, 2.2vw, 0.9rem);
+  color: #222;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ===== BUTTON ===== */
+.branch-cta {
+  padding: 11px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #8b0000, #b80000);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 18px rgba(139,0,0,0.36);
+}
+
+.branch-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(139,0,0,0.46);
+}
+
+/* ===== TABLET (≥ 768px) ===== */
+@media (min-width: 768px) {
+  .services-header {
+    padding: 120px 7% 70px;
+  }
 
   .service-branch {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 48px;
+    padding: 0 7%;
+    margin-bottom: 80px;
+  }
+
+  .service-branch.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .service-branch > img.branch-logo,
+  img.branch-logo {
+    width: 130px;
+    flex-shrink: 0;
   }
 
   .service-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .service-counters {
+    gap: 24px;
+  }
+
+  .counter-box {
+    padding: 28px 44px;
   }
 }
 
-@media (max-width: 600px) {
+/* ===== DESKTOP (≥ 1024px) ===== */
+@media (min-width: 1024px) {
+  .services-header {
+    padding: 140px 8% 80px;
+  }
+
+  .service-branch {
+    gap: 64px;
+    padding: 0 8%;
+    margin-bottom: 100px;
+  }
+
+  .service-branch > img.branch-logo,
+  img.branch-logo {
+    width: 150px;
+  }
+
   .service-grid {
-    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .service-card {
+    padding: 26px 18px;
+  }
+}
+
+/* ===== LARGE (≥ 1440px) ===== */
+@media (min-width: 1440px) {
+  .services-header {
+    padding: 160px 10% 90px;
+  }
+
+  .service-branch {
+    padding: 0 10%;
+    gap: 80px;
+    margin-bottom: 110px;
+  }
+
+  .service-branch > img.branch-logo,
+  img.branch-logo {
+    width: 170px;
+  }
+
+  .service-grid {
+    gap: 28px;
+  }
+
+  .service-card {
+    padding: 30px 22px;
+  }
+
+  .service-icon {
+    font-size: 32px;
   }
 }

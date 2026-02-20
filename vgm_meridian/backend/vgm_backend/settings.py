@@ -156,15 +156,19 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Serve React's built assets (JS, CSS) via WhiteNoise
+# dist/assets/ contains Vite-built JS/CSS (already hashed by Vite)
 STATICFILES_DIRS = []
 if REACT_DIST_DIR.exists() and (REACT_DIST_DIR / 'assets').exists():
     STATICFILES_DIRS.append(str(REACT_DIST_DIR / 'assets'))
 
+# Serve dist/ root files (index.html, images) at the root URL via WhiteNoise
 WHITENOISE_ROOT = str(REACT_DIST_DIR) if REACT_DIST_DIR.exists() else None
 
+# Use CompressedStaticFilesStorage (no manifest) to avoid conflicts with
+# Vite's already-hashed filenames
 STORAGES = {
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
 

@@ -1,249 +1,290 @@
-/* ============================= */
-/* ABOUT PAGE – CORPORATE RED */
-/* ============================= */
+/* =====================================================
+   ABOUT PAGE – MOBILE-FIRST
+   Breakpoints: 320 | 768 | 1024 | 1440
+======================================================= */
 
 .about-page {
-  min-height: 100vh;
-  padding: 100px 8%;
-  background: linear-gradient(
-    135deg,
-    #ffffff 0%,
-    #f8f5f0 50%,
-    #ffffff 100%
-  );
-  color: #1f1f1f; /* Main professional text */
-  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f5f0 50%, #ffffff 100%);
+  color: #1a1a1a;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+/* ===== HERO ===== */
+.about-hero {
+  text-align: center;
+  padding: 100px 5% 50px;
   position: relative;
   overflow: hidden;
 }
 
-/* Soft red glow */
-.about-page::before {
+.about-hero::before {
   content: "";
   position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(
-    circle,
-    rgba(184, 0, 0, 0.06),
-    transparent 70%
-  );
-  top: -200px;
-  right: -150px;
-  animation: glowMove 8s ease-in-out infinite alternate;
-}
-
-@keyframes glowMove {
-  from { transform: translateX(0); }
-  to { transform: translateX(-80px); }
-}
-
-.about-page > * {
-  position: relative;
-  z-index: 2;
-}
-
-/* ============================= */
-/* HERO SECTION */
-/* ============================= */
-
-.about-hero {
-  text-align: center;
-  margin-bottom: 100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(184,0,0,0.07) 0%, transparent 70%);
+  top: -150px;
+  right: -100px;
+  pointer-events: none;
 }
 
 .about-hero h1 {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 5vw, 3rem);
   font-weight: 700;
-
-  background: linear-gradient(
-    90deg,
-    #b80000,
-    #ff4d4d,
-    #b80000
-  );
+  background: linear-gradient(90deg, #b80000, #ff4d4d, #b80000);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
+  background-clip: text;
   animation: shineMove 4s linear infinite;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes shineMove {
   from { background-position: 0% center; }
-  to { background-position: 200% center; }
+  to   { background-position: 200% center; }
 }
 
 .about-hero p {
-  max-width: 700px;
-  margin: 15px auto 0;
+  font-size: clamp(0.88rem, 2.2vw, 1.05rem);
+  max-width: 620px;
+  margin: 14px auto 0;
   color: #4a4a4a;
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
 }
 
-/* ============================= */
-/* WHO WE ARE */
-/* ============================= */
-
-.about-container {
-  display: flex;
-  align-items: center;
-  gap: 80px;
-  margin-bottom: 120px;
-}
-
+/* ===== WHO WE ARE ===== */
 .about-text {
-  flex: 1;
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .about-text h2 {
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  color: #a40000; /* Strong corporate red */
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  color: #8b0000;
   position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
 .about-text h2::after {
   content: "";
-  width: 60px;
+  width: 52px;
   height: 3px;
-  background: #ff4d4d;
+  background: linear-gradient(90deg, #8b0000, #e53935);
   position: absolute;
   bottom: -8px;
   left: 0;
+  border-radius: 2px;
 }
 
 .about-text p {
-  line-height: 1.8;
-  margin-bottom: 18px;
+  line-height: 1.85;
   color: #3f3f3f;
+  font-size: clamp(0.88rem, 2vw, 1rem);
+  margin: 0;
 }
 
 /* IMAGE */
-
 .about-image {
-  flex: 1;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
 }
 
 .about-image img {
-  width: 80%;
-  max-width: 420px;
+  width: 100%;
+  max-width: 460px;
   border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-  transition: 0.4s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  object-fit: cover;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .about-image img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.14);
 }
 
-/* ============================= */
-/* STATS SECTION */
-/* ============================= */
-
+/* ===== STATS ===== */
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  margin-bottom: 120px;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 50px 5%;
+  background: linear-gradient(135deg, #ffffff, #f4f4f4);
 }
 
 .stat-card {
-  padding: 45px 25px;
+  padding: 32px 20px;
   border-radius: 16px;
   text-align: center;
   background: #ffffff;
   border: 1px solid #f0eaea;
-  transition: 0.4s ease;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  border-color: #ff4d4d;
+  box-shadow: 0 18px 40px rgba(184,0,0,0.14);
 }
 
 .stat-card h2 {
-  font-size: 2.6rem;
+  font-size: clamp(1.9rem, 5.5vw, 2.7rem);
   color: #b80000;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
 .stat-card p {
   color: #555;
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-.stat-card:hover {
-  transform: translateY(-10px);
-  border-color: #ff4d4d;
-  box-shadow: 0 20px 40px rgba(184,0,0,0.12);
-}
-
-/* ============================= */
-/* VISION & MISSION */
-/* ============================= */
-
+/* ===== VISION & MISSION ===== */
 .vision-mission {
   display: flex;
-  gap: 50px;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 5% 70px;
 }
 
 .vm-card {
-  flex: 1;
-  padding: 45px 30px;
+  padding: 32px 24px;
   border-radius: 16px;
   background: #ffffff;
   border-left: 4px solid #b80000;
-  transition: 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  flex: 1;
+}
+
+.vm-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(184,0,0,0.14);
 }
 
 .vm-card h3 {
-  color: #a40000;
-  margin-bottom: 15px;
+  color: #8b0000;
+  font-size: clamp(1.05rem, 3vw, 1.35rem);
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
 .vm-card p {
   color: #444;
-  line-height: 1.8;
+  line-height: 1.85;
+  font-size: clamp(0.88rem, 2vw, 1rem);
 }
 
-.vm-card:hover {
-  transform: translateY(-8px);
-  border-left: 4px solid #ff4d4d;
-  box-shadow: 0 20px 40px rgba(184,0,0,0.12);
-}
-
-/* ============================= */
-/* RESPONSIVE */
-/* ============================= */
-
-@media (max-width: 992px) {
-
-  .about-container {
-    flex-direction: column;
-    text-align: center;
+/* ===== TABLET (≥ 768px) ===== */
+@media (min-width: 768px) {
+  .about-hero {
+    padding: 120px 7% 60px;
   }
 
-  .about-text h2::after {
-    left: 50%;
-    transform: translateX(-50%);
+  .about-text {
+    padding: 70px 7%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 16px 60px;
+    align-items: start;
+  }
+
+  .about-text > *:not(.about-image) {
+    grid-column: 1;
+  }
+
+  .about-image {
+    grid-column: 2;
+    grid-row: 1 / 10;
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .about-image img {
+    max-width: 100%;
   }
 
   .about-stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 60px 7%;
   }
 
   .vision-mission {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 28px;
+    padding: 60px 7% 80px;
   }
 }
 
-@media (max-width: 600px) {
-
-  .about-page {
-    padding: 70px 6%;
+/* ===== DESKTOP (≥ 1024px) ===== */
+@media (min-width: 1024px) {
+  .about-hero {
+    padding: 140px 8% 80px;
   }
 
-  .about-hero h1 {
-    font-size: 2.2rem;
+  .about-text {
+    padding: 90px 8%;
+    gap: 20px 80px;
   }
 
   .about-stats {
-    grid-template-columns: 1fr;
+    padding: 80px 8%;
+    gap: 36px;
+  }
+
+  .stat-card {
+    padding: 42px 24px;
+  }
+
+  .vision-mission {
+    gap: 40px;
+    padding: 80px 8% 100px;
+  }
+
+  .vm-card {
+    padding: 42px 32px;
+  }
+}
+
+/* ===== LARGE (≥ 1440px) ===== */
+@media (min-width: 1440px) {
+  .about-hero {
+    padding: 160px 10% 90px;
+  }
+
+  .about-text {
+    padding: 100px 10%;
+    gap: 24px 100px;
+  }
+
+  .about-stats {
+    padding: 90px 10%;
+    gap: 44px;
+  }
+
+  .stat-card {
+    padding: 48px 28px;
+  }
+
+  .vision-mission {
+    padding: 90px 10% 110px;
+    gap: 50px;
+  }
+
+  .vm-card {
+    padding: 48px 36px;
   }
 }

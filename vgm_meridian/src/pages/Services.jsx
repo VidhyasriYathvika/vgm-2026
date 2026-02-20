@@ -28,17 +28,17 @@ export default function Services() {
 
         <div className="service-counters">
           <div className="counter-box reveal">
-            <h2>50+</h2>
+            <h2>59+</h2>
             <p>Projects Delivered</p>
           </div>
 
           <div className="counter-box reveal">
-            <h2>100+</h2>
+            <h2>8000+</h2>
             <p>Students Trained</p>
           </div>
 
           <div className="counter-box reveal">
-            <h2>10+</h2>
+            <h2>8+</h2>
             <p>Wellness Products</p>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function Services() {
 
             <div className="service-card reveal">
               <FaChalkboardTeacher className="service-icon" />
-              <h4>Autocad Course</h4>
+              <h4>Engineering Course</h4>
             </div>
 
             <div className="service-card reveal">
@@ -147,7 +147,7 @@ export default function Services() {
 
             <div className="service-card reveal">
               <FaPaintBrush className="service-icon" />
-              <h4>Tally & SAP</h4>
+              <h4>Non IT</h4>
             </div>
 
           </div>
@@ -184,12 +184,12 @@ export default function Services() {
 
             <div className="service-card reveal">
               <FaLeaf className="service-icon" />
-              <h4>Herbal Tea</h4>
+              <h4>Tisane Tea</h4>
             </div>
 
             <div className="service-card reveal">
               <FaHeartbeat className="service-icon" />
-              <h4>Herbal Dip Soup</h4>
+              <h4>Tisane Dip Soup</h4>
             </div>
 
           </div>

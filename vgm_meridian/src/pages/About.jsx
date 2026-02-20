@@ -48,9 +48,9 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const years = useCounter(1, 1000, visible);
-  const projects = useCounter(50, 2000, visible);
-  const clients = useCounter(100, 2000, visible);
+  const years = useCounter(8, 1000, visible);
+  const projects = useCounter(59, 2000, visible);
+  const clients = useCounter(50, 2000, visible);
 
   return (
     <section className="about-page">
@@ -92,7 +92,7 @@ const About = () => {
 
         <div className="about-image">
           <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
+            src="/about.jpeg"
             alt="IT Company"
           />
         </div>

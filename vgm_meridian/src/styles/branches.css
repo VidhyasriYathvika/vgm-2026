@@ -7,7 +7,7 @@
 /* ===== HERO ===== */
 .branches-hero {
   text-align: center;
-  padding: 100px 5% 55px;
+  padding: 70px 5% 25px;
   background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 50%, #ffffff 100%);
   color: #111111;
   position: relative;
@@ -46,7 +46,7 @@
 
 /* ===== SECTION ===== */
 .branches-section {
-  padding: 50px 5% 70px;
+  padding: 30px 5% 50px;
   background: #ffffff;
 }
 
@@ -57,8 +57,8 @@
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  padding: 32px 24px;
-  margin-bottom: 40px;
+  padding: 24px 20px;
+  margin-bottom: 30px;
   border-radius: 20px;
   background: #ffffff;
   box-shadow: 0 10px 32px rgba(0,0,0,0.08);
@@ -119,6 +119,37 @@
 .branch-card:hover .branch-logo img {
   transform: scale(1.08);
   filter: drop-shadow(0 10px 20px rgba(139,0,0,0.32));
+}
+
+/* ===== RIGHT SECTION: Logo top + Image bottom ===== */
+.branch-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.branch-right .branch-logo img {
+  width: clamp(120px, 35vw, 200px);
+}
+
+.branch-right .branch-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.branch-right .branch-img-wrap img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease;
+}
+
+.branch-card:hover .branch-right .branch-img-wrap img {
+  transform: scale(1.06);
 }
 
 /* ===== CONTENT ===== */
@@ -265,22 +296,22 @@
 /* ===== TABLET (≥ 768px) ===== */
 @media (min-width: 768px) {
   .branches-hero {
-    padding: 120px 7% 65px;
+    padding: 75px 7% 30px;
   }
 
   .branches-section {
-    padding: 70px 7% 90px;
+    padding: 40px 7% 60px;
   }
 
-  /* Row layout: content | logo | images */
+  /* Row layout: content | right (logo+image) */
   .branch-card {
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;      /* children default to natural height */
+    align-items: flex-start;
     text-align: left;
-    gap: 28px;
-    padding: 40px 32px;
-    margin-bottom: 56px;
+    gap: 20px;
+    padding: 30px 24px;
+    margin-bottom: 40px;
   }
 
   /* ── Content – LEFT, order 1 ── */
@@ -295,111 +326,80 @@
     text-align: left;
   }
 
-  /* ── Logo – CENTER/MIDDLE, order 2 ── */
-  .branch-logo {
+  /* ── Right section – order 2, logo top + image bottom ── */
+  .branch-right {
     order: 2;
-    flex: 0 0 120px;
-    width: 120px;
-    align-self: center;           /* vertically centered in card */
+    flex: 0 0 200px;
+    width: 200px;
+    align-self: stretch;
   }
 
-  .branch-logo img {
-    width: 120px;
+  .branch-right .branch-logo img {
+    width: 180px;
   }
 
-  /* ── Image stack – RIGHT, order 3, stretches full card height ── */
-  .branch-image-stack {
-    order: 3;
-    flex: 0 0 220px;
-    width: 220px;
-    display: flex;                /* switch from grid to flex-column */
-    flex-direction: column;
-    gap: 20px;                    /* generous space between images */
-    align-self: stretch;          /* fills full card inner height */
-  }
-
-  .branch-img-wrap {
-    flex: 1;                      /* equal share of stack height */
-    min-height: 140px;
-  }
-
-  /* images fill their wrapper 100% */
-  .branch-img-wrap img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  .branch-right .branch-img-wrap img {
+    height: 200px;
   }
 }
 
 /* ===== DESKTOP (≥ 1024px) ===== */
 @media (min-width: 1024px) {
   .branches-hero {
-    padding: 140px 8% 80px;
+    padding: 80px 8% 35px;
   }
 
   .branches-section {
-    padding: 90px 8% 110px;
+    padding: 50px 8% 70px;
   }
 
   .branch-card {
     flex-wrap: nowrap;
-    padding: 48px 40px;
-    gap: 36px;
-    margin-bottom: 70px;
+    padding: 36px 30px;
+    gap: 28px;
+    margin-bottom: 50px;
   }
 
-  .branch-logo {
-    flex: 0 0 145px;
-    width: 145px;
+  .branch-right {
+    flex: 0 0 240px;
+    width: 240px;
   }
 
-  .branch-logo img {
-    width: 145px;
+  .branch-right .branch-logo img {
+    width: 220px;
   }
 
-  .branch-image-stack {
-    flex: 0 0 255px;
-    width: 255px;
-    gap: 22px;
-  }
-
-  .branch-img-wrap {
-    min-height: 155px;
+  .branch-right .branch-img-wrap img {
+    height: 240px;
   }
 }
 
 /* ===== LARGE (≥ 1440px) ===== */
 @media (min-width: 1440px) {
   .branches-hero {
-    padding: 160px 10% 90px;
+    padding: 85px 10% 40px;
   }
 
   .branches-section {
-    padding: 110px 10% 130px;
+    padding: 60px 10% 80px;
   }
 
   .branch-card {
-    padding: 54px 48px;
-    gap: 44px;
-    margin-bottom: 80px;
+    padding: 40px 36px;
+    gap: 32px;
+    margin-bottom: 60px;
   }
 
-  .branch-logo {
-    flex: 0 0 160px;
-    width: 160px;
+  .branch-right {
+    flex: 0 0 280px;
+    width: 280px;
   }
 
-  .branch-logo img {
-    width: 160px;
+  .branch-right .branch-logo img {
+    width: 260px;
   }
 
-  .branch-image-stack {
-    flex: 0 0 290px;
-    width: 290px;
-    gap: 24px;
-  }
-
-  .branch-img-wrap {
-    min-height: 170px;
+  .branch-right .branch-img-wrap img {
+    height: 280px;
   }
 }

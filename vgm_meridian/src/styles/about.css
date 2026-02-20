@@ -13,7 +13,7 @@
 /* ===== HERO ===== */
 .about-hero {
   text-align: center;
-  padding: 100px 5% 50px;
+  padding: 70px 5% 25px;
   position: relative;
   overflow: hidden;
 }
@@ -59,10 +59,10 @@
 
 /* ===== WHO WE ARE ===== */
 .about-text {
-  padding: 50px 5%;
+  padding: 20px 5%;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
 }
 
 .about-text h2 {
@@ -116,8 +116,8 @@
 .about-stats {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
-  padding: 50px 5%;
+  gap: 12px;
+  padding: 20px 5%;
   background: linear-gradient(135deg, #ffffff, #f4f4f4);
 }
 
@@ -154,8 +154,8 @@
 .vision-mission {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 50px 5% 70px;
+  gap: 14px;
+  padding: 20px 5% 25px;
 }
 
 .vm-card {
@@ -189,15 +189,15 @@
 /* ===== TABLET (≥ 768px) ===== */
 @media (min-width: 768px) {
   .about-hero {
-    padding: 120px 7% 60px;
+    padding: 75px 7% 30px;
   }
 
   .about-text {
-    padding: 70px 7%;
+    padding: 35px 7%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    gap: 16px 60px;
+    gap: 12px 30px;
     align-items: start;
   }
 
@@ -218,31 +218,31 @@
 
   .about-stats {
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 60px 7%;
+    gap: 18px;
+    padding: 30px 7%;
   }
 
   .vision-mission {
     flex-direction: row;
-    gap: 28px;
-    padding: 60px 7% 80px;
+    gap: 20px;
+    padding: 25px 7% 30px;
   }
 }
 
 /* ===== DESKTOP (≥ 1024px) ===== */
 @media (min-width: 1024px) {
   .about-hero {
-    padding: 140px 8% 80px;
+    padding: 80px 8% 35px;
   }
 
   .about-text {
-    padding: 90px 8%;
-    gap: 20px 80px;
+    padding: 40px 8%;
+    gap: 16px 40px;
   }
 
   .about-stats {
-    padding: 80px 8%;
-    gap: 36px;
+    padding: 35px 8%;
+    gap: 24px;
   }
 
   .stat-card {
@@ -250,8 +250,8 @@
   }
 
   .vision-mission {
-    gap: 40px;
-    padding: 80px 8% 100px;
+    gap: 30px;
+    padding: 30px 8% 40px;
   }
 
   .vm-card {
@@ -262,17 +262,17 @@
 /* ===== LARGE (≥ 1440px) ===== */
 @media (min-width: 1440px) {
   .about-hero {
-    padding: 160px 10% 90px;
+    padding: 85px 10% 40px;
   }
 
   .about-text {
-    padding: 100px 10%;
-    gap: 24px 100px;
+    padding: 45px 10%;
+    gap: 20px 60px;
   }
 
   .about-stats {
-    padding: 90px 10%;
-    gap: 44px;
+    padding: 40px 10%;
+    gap: 30px;
   }
 
   .stat-card {
@@ -280,8 +280,8 @@
   }
 
   .vision-mission {
-    padding: 90px 10% 110px;
-    gap: 50px;
+    padding: 35px 10% 45px;
+    gap: 35px;
   }
 
   .vm-card {

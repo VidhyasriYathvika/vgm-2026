@@ -21,12 +21,7 @@ export default function Branches() {
         {/* ================= THULIR ================= */}
         <div className="branch-card reveal">
 
-          {/* LEFT – Logo */}
-          <div className="branch-logo">
-            <img src="/thulir-logo.jpeg" alt="Thulir Info Tech Logo" />
-          </div>
-
-          {/* MIDDLE – Content */}
+          {/* LEFT – Content */}
           <div className="branch-content">
             <h2>Thulir Info Tech</h2>
 
@@ -51,16 +46,13 @@ export default function Branches() {
             </p>
           </div>
 
-          {/* RIGHT – Two images stacked */}
-          <div className="branch-image-stack">
-            <div className="branch-img-wrap">
-              <img src="/thulir.webp" alt="IT Services" />
+          {/* RIGHT – Logo top + Image bottom */}
+          <div className="branch-right">
+            <div className="branch-logo">
+              <img src="/thulir-logo.jpeg" alt="Thulir Info Tech Logo" />
             </div>
             <div className="branch-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop"
-                alt="Digital Marketing & Web Services"
-              />
+              <img src="/thulirbranch.jpeg" alt="IT Services" />
             </div>
           </div>
 
@@ -69,12 +61,7 @@ export default function Branches() {
         {/* ================= MENTORIX ================= */}
         <div className="branch-card reveal">
 
-          {/* LEFT – Logo */}
-          <div className="branch-logo">
-            <img src="/mentorix-logo.png" alt="Mentorix Academy Logo" />
-          </div>
-
-          {/* MIDDLE – Content */}
+          {/* LEFT – Content */}
           <div className="branch-content">
             <h2>Mentorix Academy</h2>
 
@@ -100,16 +87,13 @@ export default function Branches() {
             </ul>
           </div>
 
-          {/* RIGHT – Two images stacked */}
-          <div className="branch-image-stack">
-            <div className="branch-img-wrap">
-              <img src="/mentorix.jpg" alt="Training Institute" />
+          {/* RIGHT – Logo top + Image bottom */}
+          <div className="branch-right">
+            <div className="branch-logo">
+              <img src="/mentorix-logo.png" alt="Mentorix Academy Logo" />
             </div>
             <div className="branch-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80&fit=crop"
-                alt="Students Learning & Collaboration"
-              />
+              <img src="/mentorixbranch.jpeg" alt="Training Institute" />
             </div>
           </div>
 
@@ -118,12 +102,7 @@ export default function Branches() {
         {/* ================= DOLPHIN ================= */}
         <div className="branch-card reveal">
 
-          {/* LEFT – Logo */}
-          <div className="branch-logo">
-            <img src="/dolphin-logo.png" alt="Dolphine Naturals Logo" />
-          </div>
-
-          {/* MIDDLE – Content */}
+          {/* LEFT – Content */}
           <div className="branch-content">
             <h2>Dolphine Naturals</h2>
 
@@ -151,16 +130,13 @@ export default function Branches() {
             </ul>
           </div>
 
-          {/* RIGHT – Two images stacked */}
-          <div className="branch-image-stack">
-            <div className="branch-img-wrap">
-              <img src="/dolphin.jpg" alt="Health & Wellness Products" />
+          {/* RIGHT – Logo top + Image bottom */}
+          <div className="branch-right">
+            <div className="branch-logo">
+              <img src="/dolphin-logo.png" alt="Dolphine Naturals Logo" />
             </div>
             <div className="branch-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80&fit=crop"
-                alt="Herbal Tea & Natural Remedies"
-              />
+              <img src="/dolphin.jpg" alt="Health & Wellness Products" />
             </div>
           </div>
 

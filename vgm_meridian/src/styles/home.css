@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 90px 5% 50px;
+  padding: 70px 5% 35px;
   background: linear-gradient(135deg, #ffffff 0%, #f9f7f5 50%, #ffffff 100%);
   color: #2c2c2c;
   position: relative;
@@ -196,7 +196,7 @@
 /* ===== TABLET (≥ 768px) ===== */
 @media (min-width: 768px) {
   .hero {
-    padding: 100px 7% 60px;
+    padding: 75px 7% 40px;
     min-height: 90vh;
   }
 
@@ -217,7 +217,7 @@
 /* ===== DESKTOP (≥ 1024px) ===== */
 @media (min-width: 1024px) {
   .hero {
-    padding: 110px 8% 70px;
+    padding: 80px 8% 45px;
     min-height: 88vh;
   }
 
@@ -229,7 +229,7 @@
 /* ===== LARGE (≥ 1440px) ===== */
 @media (min-width: 1440px) {
   .hero {
-    padding: 120px 10% 80px;
+    padding: 85px 10% 50px;
   }
 
   .hero-logo { width: 250px; }

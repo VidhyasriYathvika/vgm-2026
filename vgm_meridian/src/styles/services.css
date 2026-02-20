@@ -12,7 +12,7 @@
 /* ===== HEADER ===== */
 .services-header {
   text-align: center;
-  padding: 100px 5% 60px;
+  padding: 55px 5% 20px;
   background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 50%, #ffffff 100%);
   position: relative;
   overflow: hidden;
@@ -65,7 +65,7 @@
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-  min-width: 130px;
+  min-width: 170px;
   text-align: center;
 }
 
@@ -101,7 +101,7 @@
 /* Logo (direct img in services) */
 .service-branch > img.branch-logo,
 img.branch-logo {
-  width: clamp(90px, 25vw, 140px);
+  width: clamp(110px, 30vw, 180px);
   height: auto;
   flex-shrink: 0;
   will-change: transform;
@@ -259,7 +259,7 @@ img.branch-logo {
 
   .service-branch > img.branch-logo,
   img.branch-logo {
-    width: 130px;
+    width: 160px;
     flex-shrink: 0;
   }
 
@@ -291,7 +291,7 @@ img.branch-logo {
 
   .service-branch > img.branch-logo,
   img.branch-logo {
-    width: 150px;
+    width: 250px;
   }
 
   .service-grid {
@@ -317,7 +317,7 @@ img.branch-logo {
 
   .service-branch > img.branch-logo,
   img.branch-logo {
-    width: 170px;
+    width: 260px;
   }
 
   .service-grid {

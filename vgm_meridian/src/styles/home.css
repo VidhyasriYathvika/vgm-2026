@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 70px 5% 20px;
+  padding: 70px 5% 10px;
   background: linear-gradient(135deg, #ffffff 0%, #f9f7f5 50%, #ffffff 100%);
   color: #2c2c2c;
   position: relative;
@@ -132,7 +132,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 8px;
+  margin-top: 40px;
   width: 100%;
   max-width: 260px;
   opacity: 0;
@@ -251,5 +251,5 @@
 #branches,
 #services,
 #contact {
-  margin-top: -35px;
+  margin-top: -20px;
 }

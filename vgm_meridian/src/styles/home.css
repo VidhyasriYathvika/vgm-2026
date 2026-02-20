@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 70px 5% 35px;
+  padding: 70px 5% 20px;
   background: linear-gradient(135deg, #ffffff 0%, #f9f7f5 50%, #ffffff 100%);
   color: #2c2c2c;
   position: relative;
@@ -229,7 +229,7 @@
 /* ===== LARGE (≥ 1440px) ===== */
 @media (min-width: 1440px) {
   .hero {
-    padding: 85px 10% 50px;
+    padding: 85px 10% 35px;
   }
 
   .hero-logo { width: 250px; }
@@ -244,4 +244,12 @@
     padding: 15px 38px;
     font-size: 0.95rem;
   }
+}
+
+/* Reduce gap between sections */
+#about,
+#branches,
+#services,
+#contact {
+  margin-top: -35px;
 }

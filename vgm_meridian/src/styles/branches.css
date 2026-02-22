@@ -68,6 +68,11 @@
   text-align: center;
 }
 
+/* Mobile: Logo at top */
+.branch-card .branch-right {
+  order: -1;
+}
+
 .branch-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 22px 55px rgba(0,0,0,0.13);

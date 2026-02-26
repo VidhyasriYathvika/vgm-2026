@@ -14,6 +14,7 @@ A React + Vite frontend for VGM Meridian Group, featuring information about thei
 
 - React 19
 - Vite
+- Express (for production serving)
 - React Router DOM
 - CSS Modules
 
@@ -31,7 +32,20 @@ npm run build
 
 # Preview production build
 npm run preview
+
+# Serve production build
+npm run start
 ```
+
+## Deployment to Render
+
+1. Push your code to GitHub
+2. Create a new Web Service on Render
+3. Connect your GitHub repository
+4. Use these settings:
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm run start`
+   - **Environment**: Node
 
 ## Contact Form
 

@@ -45,34 +45,33 @@ export default function Contact() {
     setStatusMessage("");
 
     try {
-      const response = await fetch("/api/contact/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      // Store form data in localStorage (frontend-only approach)
+      const existingData = JSON.parse(localStorage.getItem("contact_submissions") || "[]");
+      const newSubmission = {
+        ...formData,
+        id: Date.now(),
+        timestamp: new Date().toISOString(),
+      };
+      existingData.push(newSubmission);
+      localStorage.setItem("contact_submissions", JSON.stringify(existingData));
+
+      // Show success message
+      setSubmitStatus("success");
+      setStatusMessage("Thank you! Your message has been saved and will be sent via WhatsApp.");
+      
+      // Open WhatsApp with the form data
+      openWhatsApp(formData);
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
       });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        setStatusMessage(data.message || "Thank you! Your message has been sent successfully.");
-        openWhatsApp(formData);
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-      } else {
-        setSubmitStatus("error");
-        setStatusMessage(data.message || "Something went wrong. Please try again.");
-      }
     } catch (error) {
       setSubmitStatus("error");
-      setStatusMessage("Unable to connect to the server. Please check your connection and try again.");
+      setStatusMessage("Something went wrong. Please try again.");
     } finally {
       setIsLoading(false);
     }

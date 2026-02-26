@@ -1,16 +1,38 @@
-# React + Vite
+# VGM Meridian Group Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite frontend for VGM Meridian Group, featuring information about their various divisions including Thulir Info Tech, Mentorix Academy, and Dolphin Naturals.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home** - Overview of VGM Meridian Group
+- **About** - Company information and history
+- **Services** - Details about services offered
+- **Branches** - Information about branch locations
+- **Contact** - Contact form with WhatsApp integration
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React 19
+- Vite
+- React Router DOM
+- CSS Modules
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Contact Form
+
+The contact form stores submissions locally in your browser and opens WhatsApp with your message for direct communication with the team.

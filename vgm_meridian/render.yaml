@@ -1,10 +1,9 @@
 services:
-  - type: web
+  - type: static
     name: vgm-meridian
-    env: node
     region: oregon
-    buildCommand: npm install && npm run build
-    startCommand: npm run start
+    buildCommand: npm run build
+    publishDir: dist
     envVars:
       - key: NODE_VERSION
         value: "18"

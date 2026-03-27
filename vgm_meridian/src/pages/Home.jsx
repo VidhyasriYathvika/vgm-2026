@@ -57,7 +57,7 @@ export default function Home() {
 
           {/* Company Name */}
           <h1 className="hero-title">
-            VGM Meridian Group Pvt Ltd
+            VGM Meridian Groups Pvt Ltd
           </h1>
 
           {/* Decorative Line */}
